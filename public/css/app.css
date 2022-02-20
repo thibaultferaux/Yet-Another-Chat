@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--body-background-color);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.hide {
+    display: none !important;
+}
+
+.flex-wrapper {
+    height: 100vh;
+    display: grid;
+    margin: 0 5%;
+    align-items: center;
+}
+
+.headerLogin {
+    margin: 0 10px 90px;
+}
+
+.headerRegister {
+    margin: 0 10px 80px;
+}
+
+h1 {
+    font-size: 32px;
+    font-family: 'Raleway', sans-serif;
+    color: var(--purple);
+    font-weight: 800;
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--grey-800);
+    margin: 0;
+}
+
+.error-container {
+    color: var(--red);
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.inputElement {
+    position: relative;
+}
+
+.inputElement input[type=text],
+.inputElement input[type=password] {
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 0 6px var(--shadow-color);
+    outline: none;
+    line-height: 55px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--grey-800);
+    padding-left: 50px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.inputElement input[type=text]::placeholder,
+.inputElement input[type=password]::placeholder {
+    color: var(--grey-400);
+}
+
+.inputElement input[type=text]:focus,
+.inputElement input[type=password]:focus {
+    box-shadow: 0 0 12px var(--shadow-color-focussed);
+}
+
+.inputElement i {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 16px;
+    color: var(--grey-200);
+}
+
+.inputElement input[type=text]:focus+i,
+.inputElement input[type=password]:focus+i {
+    color: var(--purple);
+}
+
+.btnPurple {
+    width: 100%;
+    line-height: 55px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+    background-color: var(--purple);
+    border: none;
+    border-radius: 50px;
+}
+
+#btnLogin,
+#btnRegister {
+    margin-top: 20px;
+}
+
+.inputs p {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--grey-600);
+    margin: 30px 0;
+}
+
+.altLoginButtons {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.altLoginButtons img {
+    height: 25px;
+}
+
+.altLoginButtons button {
+    height: 50px;
+    width: 50px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--white);
+    box-shadow: 0 0 6px var(--shadow-color);
+}
+
+.inputs p a {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+#loader {
+    border: .5rem solid transparent;
+    border-radius: 50%;
+    border-top: .5rem solid var(--purple);
+    width: 5rem;
+    height: 5rem;
+    animation: spin 1s ease infinite;
+    display: grid;
+    justify-self: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.leftSide {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.leftSide .headerChats {
+    padding: 32px 0;
+    margin: 0 7%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 15px;
+    align-items: center;
+}
+
+#createChat {
+    background-color: var(--purple-transparant);
+    color: var(--purple);
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnLogout {
+    color: var(--purple);
+    font-size: 28px;
+}
+
+.yourChats {
+    box-shadow: 0 -3px 6px var(--shadow-color);
+    border-radius: 28px 28px 0 0;
+    height: calc(100% - 100px);
+    padding: 40px 7%;
+    padding-bottom: 150px;
+    overflow-y: scroll;
+}
+
+.chatRoomElement {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    margin-bottom: 10px;
+    min-height: 80px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 28px;
+    box-shadow: 0 0 6px var(--shadow-color);
+    text-align: left;
+}
+
+.chatRoomElement i {
+    padding: 0 20px;
+    font-size: 30px;
+    color: var(--purple);
+}
+
+.chatRoomElement .arrow-grey {
+    color: var(--grey-200);
+    font-size: 20px;
+}
+
+.chatRoomElement p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.chatRoomElement button {
+    border: none;
+    color: var(--white);
+    background-color: var(--purple);
+    margin-right: 15px;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnJoinChat {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 7%;
+    background: linear-gradient(to top, white 50%, rgba(255, 255, 255, 0));
+}
+
+
+#joinChat {
+    margin: 50px 0;
+}
+
+.backgroundBlur {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn .3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.createChat {
+    background: var(--white);
+    border-radius: 25px;
+    width: 100%;
+    margin: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 7%;
+    grid-gap: 20px;
+    box-shadow: 0 0 18px var(--shadow-color);
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.top p {
+    color: var(--purple);
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.top i {
+    font-size: 30px;
+    color: var(--purple-transparant);
+}
+
+input[name="chatName"] {
+    font-size: 16px !important;
+    padding-left: 25px !important;
+}
+
+.availableChatrooms {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 7%;
+    background: var(--white);
+    z-index: 20;
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -3px 6px var(--shadow-color);
+    top: 100vh;
+    transition: transform .5s ease-in-out;
+}
+
+.headerAvChatrooms {
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.headerAvChatrooms i {
+    font-size: 30px;
+    color: var(--purple-transparant);
+}
+
+.joined {
+    background-color: var(--purple-transparant) !important;
+}
+
+.joined i {
+    color: var(--white);
+    font-size: 16px;
+}
+
+.rightSide {
+    background-color: var(--body-background-color);
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    z-index: 100;
+    transition: .2s ease-in-out;
+}
+
+.rightSide header {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    padding: 20px 7%;
+    justify-items: center;
+    align-items: center;
+    color: var(--purple);
+    z-index: 10;
+    background-color: var(--white);
+}
+
+.rightSide header i {
+    font-size: 22px;
+}
+
+.chatroomName {
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.chatBox {
+    height: 100vh;
+    width: 95%;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.message {
+    display: grid;
+    grid-template-columns: auto auto 20%;
+    grid-gap: 5px;
+    margin-bottom: 10px;
+    justify-content: left;
+    align-items: end;
+}
+
+.mine {
+    grid-template-columns: 20% auto auto;
+    justify-content: right;
+}
+
+.mine .messageBubble {
+    order: -1;
+    grid-column-start: 2;
+}
+
+.mine .textBalloon {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.mine img {
+    grid-column-start: 3;
+}
+
+.message img {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.message .author {
+    color: var(--grey-600);
+    font-size: 14px;
+    margin: 0 0 5px 10px;
+}
+
+.message .textBalloon {
+    padding: 10px 20px;
+    box-shadow: 0 0 6px var(--shadow-color);
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.chatBox .notif {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: -10px 0 0px 0;
+}
+
+.notif p {
+    color: var(--grey-400);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.sendMessage {
+    height: 125px;
+}
+
+.sendMessage .inputElement {
+    position: relative;
+    width: 86%;
+    margin: 20px 7% 0 7%;
+}
+
+.sendMessage .inputElement button {
+    position: absolute;
+    right: 18px;
+    top: 16px;
+    border: none;
+    background-color: transparent;
+}
+
+.sendMessage .inputElement button i {
+    position: static;
+    color: var(--purple);
+    font-size: 22px;
+}
+
+.sendMessage .inputElement input[type="text"] {
+    padding: 0 60px 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-height: 700px) {
+    .headerLogin {
+        margin: 0 10px 50px;
+    }
+
+    .headerRegister {
+        margin: 0 10px 30px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .inputElement input[type=text],
+    .inputElement input[type=password] {
+        line-height: 40px;
+        font-size: 14px;
+    }
+
+    .inputElement i {
+        top: 13px;
+    }
+
+    .inputElement button {
+        line-height: 40px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .inputs p {
+        margin: 15px 0;
+    }
+
+    .altLoginButtons img {
+        height: 20px;
+    }
+
+    .altLoginButtons button {
+        height: 40px;
+        width: 40px;
+    }
+
+    .sendMessage .inputElement button {
+        top: -14px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .flex-wrapper {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .leftSide {
+        width: 700px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .createChat {
+        width: 400px;
+        padding: 3%;
+    }
+
+    .yourChats {
+        /* border-radius: 0; */
+    }
+
+    .rightSide header {
+        padding: 20px 15%;
+    }
+
+    .btnJoinChat {
+        width: 600px;
+    }
+
+    .availableChatrooms {
+        width: 600px;
+    }
+
+    .chatBox {
+        width: 70%;
+    }
+
+    .sendMessage .inputElement {
+        position: relative;
+        width: 60%;
+        margin: 20px 20% 0 20%;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <title>Yet another chat</title>
+</head>
+
+<body>
+  <div class="flex-wrapper">
+    <div id="loader" class="hide"></div>
+    <div id="app">
+      <header class="headerRegister">
+        <h1>Let's get started!</h1>
+        <h2>Please create your account.</h2>
+      </header>
+      <form>
+        <div class="inputs">
+          <div class="error-container hide"></div>       
+          <div class="inputElement">
+            <input type="text" name="fullName" placeholder="Full Name">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="inputElement">
+            <input type="text" name="email" placeholder="Email Address">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="inputElement">
+            <input type="password" name="password" placeholder="Password">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="inputElement">
+            <input type="password" name="confirmPassword" placeholder="Confirm Password">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="inputElement">
+            <button id="btnRegister" class="btnPurple">Register</button>
+          </div>
+          <p>Already have an account? <a class="link" href="index.html">Log in</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script type="module" src="./scripts/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+:root {
+    --white: #FFF;
+    --purple: #8044ff;
+    --purple-transparant: #8044ff80;
+    --grey-800: #848484;
+    --grey-600: #919191;
+    --grey-400: #b1b1b1;
+    --grey-200: #d8d8d8;
+    --red: #D06868;
+    
+    
+    
+    --shadow-color: rgba(0, 0, 0, .2);
+    --shadow-color-focussed: #7f44ff40;
+    --body-background-color: var(--white);
+}

@@ -1,0 +1,1 @@
+achter klik op knop delay en btn disabled dan wachten op berichten en btn terug enabled

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <title>Yet another chat</title>
+</head>
+
+<body>
+  <div class="flex-wrapper">
+    <div id="app">
+      <header class="headerLogin">
+        <h1>Welcome!</h1>
+        <h2>Pleas login your account.</h2>
+      </header>
+      <form>
+        <div class="inputs">
+          <div class="error-container hide"></div>
+          <div class="inputElement">
+            <input type="text" name="email" placeholder="Email Address">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="inputElement">
+            <input type="password" name="password" placeholder="Password">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="inputElement">
+            <button id="btnLogin" class="btnPurple">Login</button>
+          </div>
+          <p>or continue with</p>
+          <div class="altLoginButtons">
+            <button id="btnGoogle"><img src="img/google.png" alt="google-logo"></button>
+            <button id="btnFaceBook"><img src="img/facebook.png" alt="facebook-logo"></button>
+            <button id="btnTwitter"><img src="img/twitter.png" alt="twitter-logo"></button>
+          </div>
+          <p>Don't have an account? <a class="link" href="register.html">Register</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script type="module" src="./scripts/login.js"></script>
+</body>
+
+</html>
